@@ -1,4 +1,25 @@
+name: Test Deployment Workflow
+
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
+
+jobs:
+  test-deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Simulate Build Process
+        run: |
+          echo "Building the website..."
+          sleep 2 # Pauses for 2 seconds to simulate work
+          echo "Build complete!"
+
+      - name: Simulate Deployment
+        run: |
+          echo "Deploying to the server..."
+          echo "Deployment successful! 🚀"
